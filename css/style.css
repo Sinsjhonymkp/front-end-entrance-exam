@@ -571,16 +571,19 @@ a:after {
 
   .download__btn {
     top: -25px;
-    right: -40px;
+    right: 40%;
     border-radius: 8.4px;
     padding: 5.6px;
   }
 
-  .header__img,
   .header__introduction {
-    width: 123.9px;
-    height: 123.9px;
+    width: 124px;
+    height: 124px;
     padding: 11.9px;
+  }
+  .header__img {
+    width: 124px;
+    height: 124px;
   }
 
   #change-introduction,
