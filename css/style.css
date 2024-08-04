@@ -423,7 +423,7 @@ button:focus:not(:active)::after {
   position: relative;
   border-radius: 12px;
   padding: 11px;
-  max-width: 166px;
+  max-width: 116px;
   display: flex;
   flex-direction: column;
   transition: 0.3s;
@@ -520,4 +520,203 @@ button:focus:not(:active)::after {
 }
 .main__about-contacts-title {
   font-size: 20px;
+}
+
+@media (max-width: 903px) {
+  .container {
+    width: 450px;
+    padding: 35px;
+  }
+
+  .header {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19.6px;
+    padding-top: 7px;
+    padding-bottom: 19.6px;
+  }
+
+  .h2 {
+    font-size: 14.7px;
+  }
+
+  .text_normal {
+    font-size: 9.8px;
+  }
+
+  .text_small,
+  .text_small_gray {
+    font-size: 8.4px;
+  }
+
+  .download__btn {
+    top: -25px;
+    right: -40px;
+    border-radius: 8.4px;
+    padding: 5.6px;
+  }
+
+  .header__img,
+  .header__introduction {
+    width: 123.9px;
+    height: 123.9px;
+    padding: 11.9px;
+  }
+
+  #change-introduction,
+  #accept-introduction {
+    padding: 5.6px;
+  }
+
+  .introducion__stack {
+    font-size: 11.9px;
+  }
+
+  .header__languages {
+    max-width: 350px;
+    gap: 20px;
+    padding: 11.9px;
+  }
+
+  .languages__wrapper-progress,
+  .progress-bar {
+    width: 168px;
+    height: 11.2px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__expirience {
+    min-width: 300px;
+    max-width: 350px;
+  }
+
+  .main__expirience,
+  .main__tools,
+  .main__education,
+  .main__about-interests,
+  .main__about-contacts {
+    padding: 11.9px;
+  }
+
+  .change__expirience,
+  .accept-expirience {
+    border-radius: 19.6px;
+    padding: 3.5px 7px;
+  }
+
+  .main__expirience-title {
+    padding-bottom: 15.4px;
+  }
+
+  .experiense__btn {
+    top: 9.8px;
+    right: 7.7px;
+    border-radius: 41.3px;
+    width: 60.9px;
+  }
+
+  .expiriense__wrapper {
+    gap: 9.8px;
+  }
+
+  .expiriense__wrapper-item {
+    gap: 7.7px;
+    padding: 7.7px 18.9px;
+    border-radius: 8.4px;
+    flex-wrap: wrap;
+  }
+
+  .expiriense__wrapper-item__work {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 115.5px 1fr;
+  }
+
+  .item__work-responsibilities {
+    width: 238px;
+  }
+
+  .tools__title {
+    padding-top: 11.9px;
+    padding-left: 11.9px;
+    padding-bottom: 14.7px;
+  }
+
+  .tools__wrapper {
+    flex-direction: row;
+    gap: 11.9px;
+    padding: 0 26.6px;
+  }
+
+  .tools__wrapper-item {
+    border-radius: 8.4px;
+    padding: 15.4px 15.4px;
+    gap: 15.4px;
+  }
+
+  .tools__wrapper-item__svg {
+    width: 14.7px;
+    height: 14.7px;
+  }
+
+  .tools__wrapper-title {
+    border-radius: 8.4px;
+    font-size: 4.9px;
+    padding: 1.4px 4.2px;
+  }
+
+  .main__education-wrapper {
+    gap: 16.1px;
+  }
+
+  .main__education-wrapper__item {
+    border-radius: 8.4px;
+    padding: 7.7px;
+    max-width: 116.2px;
+    gap: 7.7px;
+  }
+
+  .main__education-wrapper__item-year {
+    padding-bottom: 7.7px;
+  }
+
+  .main__education-wrapper__item-school {
+    gap: 7.7px;
+  }
+
+  .main__about {
+    gap: 19.6px;
+  }
+
+  .main__about-interests {
+    max-width: 270.9px;
+    gap: 15.4px;
+  }
+
+  .main__about-interests__tags {
+    gap: 7.7px;
+  }
+
+  .interests__tags-item {
+    border-radius: 8.4px;
+    padding: 4.2px 9.8px;
+  }
+
+  .main__about-contacts {
+    max-width: 270.9px;
+    padding: 11.9px;
+    gap: 11.2px;
+  }
+
+  .main__about-contacts-title {
+    font-size: 14px;
+  }
 }
