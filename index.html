@@ -15,40 +15,50 @@
         </a>
         <img class="header__img" src="/img/profileImg.png" alt="avatar" />
         <div contenteditable="false" class="header__introduction">
+          <button
+            id="change-introduction"
+            class="text_normal change__expirience">
+            edit
+          </button>
+          <button
+            id="accept-introduction"
+            class="text_normal accept-expirience">
+            accept
+          </button>
           <p class="introducion__text text_normal">Hello 👋🏻 I’m</p>
-          <h2 class="introducion__name h2">Karthik SR</h2>
-          <p class="introducion__stack text_normal_gray">UX/UI Designer</p>
+          <div class="introducion__text-cotainer">
+            <h2 class="introducion__name h2">Karthik SR</h2>
+            <p class="introducion__stack text_normal_gray">UX/UI Designer</p>
+          </div>
         </div>
         <div class="header__languages">
+          <button id="change-languages" class="text_normal change__expirience">
+            edit
+          </button>
+          <button id="accept-languages" class="text_normal accept-expirience">
+            accept
+          </button>
           <p class="languages__title h2">Languages</p>
           <div class="languages__wrapper">
-            <label class="text_normal languages__wrapper-name">
-              English
-              <progress
-                class="languages__wrapper-progress"
-                max="100"
-                value="100">
-                70%
-              </progress>
-            </label>
-            <label class="text_normal languages__wrapper-name">
-              Malayalam
-              <progress
-                class="languages__wrapper-progress"
-                max="100"
-                value="100">
-                70%
-              </progress>
-            </label>
-            <label class="text_normal languages__wrapper-name">
-              Hindi
-              <progress
-                class="languages__wrapper-progress"
-                max="100"
-                value="70">
-                70%
-              </progress>
-            </label>
+            <div class="languagues__container">
+              <span class="text_normal languages__wrapper-name">English</span>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="languagues__container">
+              <span class="text_normal languages__wrapper-name">Malayalam</span>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+            <div class="languagues__container">
+              <span class="text_normal languages__wrapper-name">Hindi</span>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -64,7 +74,9 @@
           <h2 class="main__expirience-title h2">Expiriense</h2>
           <div class="expiriense__wrapper">
             <div contenteditable="false" class="expiriense__wrapper-item">
-              <button class="experiense__btn">most resent</button>
+              <button contenteditable="false" class="experiense__btn">
+                most resent
+              </button>
               <p class="expiriense__wrapper-item__text text_small">
                 Jun. 2023 - Present
               </p>
@@ -86,7 +98,9 @@
               </div>
             </div>
             <div contenteditable="false" class="expiriense__wrapper-item">
-              <button class="experiense__btn">most resent</button>
+              <button contenteditable="false" class="experiense__btn">
+                most resent
+              </button>
               <p class="expiriense__wrapper-item__text text_small">
                 Jun. 2023 - Present
               </p>
@@ -112,7 +126,9 @@
               </div>
             </div>
             <div contenteditable="false" class="expiriense__wrapper-item">
-              <button class="experiense__btn">most resent</button>
+              <button contenteditable="false" class="experiense__btn">
+                most resent
+              </button>
               <p class="expiriense__wrapper-item__text text_small">
                 Jun. 2023 - Present
               </p>
@@ -202,10 +218,29 @@
           </div>
         </div>
         <div class="main__education">
+          <button id="change-education" class="text_normal change__expirience">
+            edit
+          </button>
+          <button id="accept-education" class="text_normal accept-expirience">
+            accept
+          </button>
           <h2 class="h2">Education</h2>
           <div class="main__education-wrapper">
             <div contenteditable="false" class="main__education-wrapper__item">
               <p class="main__education-wrapper__item-year text_normal">2023</p>
+              <button class="favorite__education-button">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2.75 0.807373C1.99375 0.807373 1.32 1.12388 0.81125 1.61929C0.31625 2.1147 0 2.78901 0 3.55965C0 4.31653 0.31625 4.99083 0.81125 5.5L5.5 10.1926L10.1887 5.5C10.6838 5.0046 11 4.33029 11 3.55965C11 2.80277 10.6838 2.12847 10.1887 1.61929C9.69375 1.12388 9.02 0.807373 8.25 0.807373C7.49375 0.807373 6.82 1.12388 6.31125 1.61929C5.81625 2.1147 5.5 2.78901 5.5 3.55965C5.5 2.80277 5.18375 2.12847 4.68875 1.61929C4.19375 1.12388 3.52 0.807373 2.75 0.807373Z"
+                    stroke-width="1"
+                    fill="none" />
+                </svg>
+              </button>
               <p class="main__education-wrapper__item-school text_normal">
                 UI/UX
                 <span class="text_small"
@@ -216,6 +251,19 @@
               </p>
             </div>
             <div contenteditable="false" class="main__education-wrapper__item">
+              <button class="favorite__education-button">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2.75 0.807373C1.99375 0.807373 1.32 1.12388 0.81125 1.61929C0.31625 2.1147 0 2.78901 0 3.55965C0 4.31653 0.31625 4.99083 0.81125 5.5L5.5 10.1926L10.1887 5.5C10.6838 5.0046 11 4.33029 11 3.55965C11 2.80277 10.6838 2.12847 10.1887 1.61929C9.69375 1.12388 9.02 0.807373 8.25 0.807373C7.49375 0.807373 6.82 1.12388 6.31125 1.61929C5.81625 2.1147 5.5 2.78901 5.5 3.55965C5.5 2.80277 5.18375 2.12847 4.68875 1.61929C4.19375 1.12388 3.52 0.807373 2.75 0.807373Z"
+                    stroke-width="1"
+                    fill="none" />
+                </svg>
+              </button>
               <p class="main__education-wrapper__item-year text_normal">
                 2017 - 2022
               </p>
@@ -228,6 +276,19 @@
               </p>
             </div>
             <div contenteditable="false" class="main__education-wrapper__item">
+              <button class="favorite__education-button">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2.75 0.807373C1.99375 0.807373 1.32 1.12388 0.81125 1.61929C0.31625 2.1147 0 2.78901 0 3.55965C0 4.31653 0.31625 4.99083 0.81125 5.5L5.5 10.1926L10.1887 5.5C10.6838 5.0046 11 4.33029 11 3.55965C11 2.80277 10.6838 2.12847 10.1887 1.61929C9.69375 1.12388 9.02 0.807373 8.25 0.807373C7.49375 0.807373 6.82 1.12388 6.31125 1.61929C5.81625 2.1147 5.5 2.78901 5.5 3.55965C5.5 2.80277 5.18375 2.12847 4.68875 1.61929C4.19375 1.12388 3.52 0.807373 2.75 0.807373Z"
+                    stroke-width="1"
+                    fill="none" />
+                </svg>
+              </button>
               <p class="main__education-wrapper__item-year text_normal">2017</p>
               <p class="main__education-wrapper__item-school text_normal">
                 Graphic design
@@ -241,6 +302,14 @@
         </div>
         <div class="main__about">
           <div class="main__about-interests">
+            <button
+              id="change-interests"
+              class="text_normal change__expirience">
+              edit
+            </button>
+            <button id="accept-interests" class="text_normal accept-expirience">
+              accept
+            </button>
             <h2 class="h2">Interests</h2>
             <div class="main__about-interests__tags">
               <span

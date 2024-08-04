@@ -80,12 +80,14 @@
   padding-bottom: 28px;
 }
 .download__btn {
+  border-radius: 12px;
+  text-decoration: none;
   cursor: pointer;
-  padding: 11px;
+  padding: 8px;
   color: white;
   background: #000;
   position: absolute;
-  top: -20%;
+  top: -15%;
   right: 0%;
 }
 .header__img {
@@ -93,16 +95,28 @@
   height: 177px;
 }
 .header__introduction {
+  position: relative;
   background: var(--bg-gray-color);
   width: 177px;
   height: 177px;
   padding: 17px;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   border-radius: 12px;
 }
-.introducion__text {
-  padding-bottom: 45%;
+#change-introduction {
+  padding: 8px;
+  top: 10px;
+  right: 5px;
+}
+#accept-introduction {
+  padding: 8px;
+  top: 10px;
+  right: 5px;
+}
+.introducion__text-cotainer {
+  transition: 0.3s;
 }
 .introducion__name {
   text-align: start;
@@ -117,6 +131,7 @@
   text-align: left;
 }
 .header__languages {
+  position: relative;
   background: var(--bg-gray-color);
   border-radius: 12px;
   display: flex;
@@ -135,13 +150,42 @@
   justify-content: space-around;
 }
 .languages__wrapper-name {
+  transition: 0.3s;
   display: flex;
   justify-content: space-between;
 }
 .languages__wrapper-progress {
   background-color: #ff8630;
   width: 240px;
+  border-radius: 12px;
   border: none;
+}
+.languagues__container {
+  display: flex;
+  justify-content: space-between;
+}
+.progress-bar {
+  cursor: pointer;
+  transition: 0.3s;
+  width: 240px;
+  height: 16px;
+  background-color: #e4e3e3;
+  border-radius: 12px;
+  margin-bottom: 10px; /* расстояние между полосками */
+}
+.progress-fill {
+  height: 100%;
+  background-color: var(--bg-hover-color);
+  width: 50%; /* Начальная ширина прогресса */
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.progress-bar:hover {
+  background: #cfcfcf;
+  .progress-fill {
+    background: #22b463;
+  }
 }
 
 .main {
@@ -234,6 +278,7 @@ button:focus:not(:active)::after {
 .main__expirience-title {
   padding-bottom: 22px;
 }
+
 .experiense__btn {
   cursor: pointer;
   opacity: 0;
@@ -293,6 +338,7 @@ button:focus:not(:active)::after {
 }
 
 .main__tools {
+  position: relative;
   padding-bottom: 30px;
   background: var(--bg-gray-color);
   border-radius: 12px;
@@ -340,6 +386,7 @@ button:focus:not(:active)::after {
 }
 
 .main__education {
+  position: relative;
   border-radius: 12px;
   padding: 17px;
   background: var(--bg-gray-color);
@@ -354,6 +401,7 @@ button:focus:not(:active)::after {
   gap: 23px;
 }
 .main__education-wrapper__item {
+  position: relative;
   border-radius: 12px;
   padding: 11px;
   background: white;
@@ -370,6 +418,58 @@ button:focus:not(:active)::after {
     }
   }
 }
+
+.main__education-wrapper__item-active {
+  position: relative;
+  border-radius: 12px;
+  padding: 11px;
+  max-width: 166px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  color: white;
+  background: var(--bg-hover-color);
+}
+
+.favorite__education-button {
+  opacity: 0;
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  background: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  transition: 0.3s;
+}
+.favorite__education-button__active {
+  opacity: 1;
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  background: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  transition: 0.3s;
+}
+.favorite__education-button__active path {
+  fill: yellow;
+}
+.favorite__education-button svg {
+  width: 17px;
+  height: 17px;
+  stroke: #f6ed1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__education-wrapper__item:hover .favorite__education-button {
+  opacity: 1;
+  fill: yellow;
+}
+
 .main__education-wrapper__item-year {
   padding-bottom: 11px;
 }
@@ -386,6 +486,7 @@ button:focus:not(:active)::after {
   gap: 28px;
 }
 .main__about-interests {
+  position: relative;
   border-radius: 12px;
   padding: 17px;
   max-width: 387px;
@@ -401,6 +502,7 @@ button:focus:not(:active)::after {
   flex-wrap: wrap;
 }
 .interests__tags-item {
+  transition: 0.3s;
   border-radius: 12px;
   background: white;
   padding: 6px 14px;
