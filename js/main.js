@@ -2,7 +2,12 @@ import "../css/style.css";
 
 const exprienseCard = document.querySelectorAll(".expiriense__wrapper-item");
 
-exprienseCard.forEach((item) => {
+exprienseCard.forEach((item, index) => {
+  const savedContent = localStorage.getItem("editable-content-" + index);
+  item.style.cursor = "text";
+  if (savedContent) {
+    item.innerHTML = savedContent;
+  }
   const newBtn = document.createElement("button");
   newBtn.textContent = "most resent";
   newBtn.classList.add("experiense__btn");
@@ -12,60 +17,63 @@ exprienseCard.forEach((item) => {
     item.classList.toggle("expiriense__wrapper-item");
     newBtn.classList.toggle("experiense__btn-active");
   });
-  item.addEventListener("click", () => {
+});
+
+const changeExpirienseBtn = document.getElementById("change-expirience");
+const acceptExpirienseBtn = document.getElementById("accept-expirience");
+
+changeExpirienseBtn.addEventListener("click", () => {
+  changeContent(changeExpirienseBtn, acceptExpirienseBtn, exprienseCard);
+});
+
+acceptExpirienseBtn.addEventListener("click", () => {
+  acceptChanges(acceptExpirienseBtn, changeExpirienseBtn, exprienseCard);
+});
+
+function changeContent(btnChange, btnAccept, content) {
+  btnChange.style.display = "none";
+  btnAccept.style.display = "block";
+  content.forEach((item) => {
     item.setAttribute("contenteditable", "true");
+    item.style.textDecoration = "underline";
     item.style.cursor = "text";
   });
-  item.addEventListener("mouseleave", () => {
-    item.setAttribute("contenteditable", "false");
-    item.style.cursor = "default";
+}
+
+function acceptChanges(btnAccept, btnChange, content) {
+  btnChange.style.display = "block";
+  btnAccept.style.display = "none";
+  content.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.position = "relative";
+      item.style.left = "0";
+    }, 300);
+    item.style.position = "fixed";
+    item.style.left = "-1000px";
+    item.setAttribute("contenteditable", "fase");
+    item.style.textDecoration = "none";
+    item.style.cursor = "deafult";
+    localStorage.setItem("editable-content-" + index, item.innerHTML);
   });
-});
-const mainSections = document.querySelectorAll(".main > div");
-mainSections.forEach((section) => {
-  section.setAttribute("draggable", true);
-
-  section.addEventListener("dragstart", handleDragStart);
-  section.addEventListener("dragover", handleDragOver);
-  section.addEventListener("drop", handleDrop);
-  section.addEventListener("dragenter", handleDragEnter);
-  section.addEventListener("dragleave", handleDragLeave);
-});
-
-let draggedSection = null;
-
-function handleDragStart(event) {
-  draggedSection = this;
-  event.dataTransfer.effectAllowed = "move";
-  event.dataTransfer.setData("text/html", this.innerHTML);
-  this.classList.add("dragging");
 }
+// сделать кнопки на блоки которые нужно редактировать, сделать форму для добавления карточек + удаления карточек
 
-function handleDragOver(event) {
-  event.preventDefault();
-  return false;
-}
+/*const elementsForEdit = document.querySelectorAll('[contenteditable="true"]');
 
-function handleDrop(event) {
-  event.stopPropagation();
-  if (draggedSection !== this) {
-    draggedSection.innerHTML = this.innerHTML;
-    this.innerHTML = event.dataTransfer.getData("text/html");
+// Load saved content
+elementsForEdit.forEach((element, index) => {
+  const savedContent = localStorage.getItem("editable-content-" + index);
+  element.style.cursor = "text";
+  if (savedContent) {
+    element.innerHTML = savedContent;
   }
-  return false;
-}
 
-function handleDragEnter(event) {
-  this.classList.add("over");
-}
-
-function handleDragLeave(event) {
-  this.classList.remove("over");
-}
-
-mainSections.forEach((section) => {
-  section.addEventListener("dragend", function () {
-    this.classList.remove("dragging");
-    mainSections.forEach((sec) => sec.classList.remove("over"));
+  element.addEventListener("click", () => {
+    element.style.cursor = "text";
   });
-});
+
+  element.addEventListener("blur", () => {
+    element.style.cursor = "pointer";
+    localStorage.setItem("editable-content-" + index, element.innerHTML);
+  });
+}); */
