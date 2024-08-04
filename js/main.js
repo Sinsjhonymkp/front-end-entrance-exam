@@ -30,17 +30,19 @@ let localStorageItemKeyIntroducionCard = "introducion-Cards";
 let localStorageItemKeyInterestsCards = "interests-Cards";
 let localStorageItemKeyLanguagesCards = "languages-Cards";
 
-progressFills.forEach((progressFill) => {
+progressFills.forEach((progressFill, index) => {
+  var savedWidth = localStorage.getItem("width" + index);
+  if (savedWidth) {
+    progressFill.style.width = savedWidth + "%";
+  }
   progressFill.addEventListener("click", () => {
-    let newWidth = prompt(
-      "Укажите уровень владения английским в процентах",
-      "50"
-    );
+    let newWidth = prompt("Укажите уровень владения языком в процентах", "50");
     if (newWidth !== null && newWidth >= 0 && newWidth <= 100) {
       newWidth = Math.min(100, Math.max(0, parseInt(newWidth)));
       setTimeout(() => {
         progressFill.style.width = newWidth + "%";
       }, 300);
+      localStorage.setItem("width" + index, newWidth);
     } else {
       alert("Введите число от 0 до 100");
     }

@@ -275,6 +275,24 @@ button:after {
 button:focus:not(:active)::after {
   animation: wave 0.3s ease-out;
 }
+
+a:focus:not(:active)::after {
+  animation: wave 0.3s ease-out;
+}
+a:after {
+  overflow: hidden;
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
 .main__expirience-title {
   padding-bottom: 22px;
 }
@@ -423,7 +441,7 @@ button:focus:not(:active)::after {
   position: relative;
   border-radius: 12px;
   padding: 11px;
-  max-width: 116px;
+  max-width: 166px;
   display: flex;
   flex-direction: column;
   transition: 0.3s;
@@ -682,6 +700,9 @@ button:focus:not(:active)::after {
     padding: 7.7px;
     max-width: 116.2px;
     gap: 7.7px;
+  }
+  .main__education-wrapper__item-active {
+    max-width: 116px;
   }
 
   .main__education-wrapper__item-year {
