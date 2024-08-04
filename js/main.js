@@ -1,26 +1,23 @@
 import "../css/style.css";
 
 const exprienseCard = document.querySelectorAll(".expiriense__wrapper-item");
-
+const changeExpirienseBtn = document.getElementById("change-expirience");
+const acceptExpirienseBtn = document.getElementById("accept-expirience");
 exprienseCard.forEach((item, index) => {
   const savedContent = localStorage.getItem("editable-content-" + index);
-  item.style.cursor = "text";
   if (savedContent) {
     item.innerHTML = savedContent;
   }
-  const newBtn = document.createElement("button");
-  newBtn.textContent = "most resent";
-  newBtn.classList.add("experiense__btn");
-  item.appendChild(newBtn);
-  newBtn.addEventListener("click", (btn) => {
-    item.classList.toggle("expiriense__wrapper-item-active");
-    item.classList.toggle("expiriense__wrapper-item");
-    newBtn.classList.toggle("experiense__btn-active");
-  });
-});
 
-const changeExpirienseBtn = document.getElementById("change-expirience");
-const acceptExpirienseBtn = document.getElementById("accept-expirience");
+  const btn = item.querySelector(".experiense__btn");
+  console.log("btn :", btn);
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("experiense__btn-active");
+    toggleActiveState(item, btn);
+    setInStorage(index, item);
+  });
+  toggleActiveState(item, btn);
+});
 
 changeExpirienseBtn.addEventListener("click", () => {
   changeContent(changeExpirienseBtn, acceptExpirienseBtn, exprienseCard);
@@ -45,16 +42,28 @@ function acceptChanges(btnAccept, btnChange, content) {
   btnAccept.style.display = "none";
   content.forEach((item, index) => {
     setTimeout(() => {
-      item.style.position = "relative";
-      item.style.left = "0";
+      item.style.opacity = "1";
     }, 300);
-    item.style.position = "fixed";
-    item.style.left = "-1000px";
+    item.style.opacity = "0";
     item.setAttribute("contenteditable", "fase");
     item.style.textDecoration = "none";
     item.style.cursor = "deafult";
-    localStorage.setItem("editable-content-" + index, item.innerHTML);
+    setInStorage(index, item);
   });
+}
+
+function toggleActiveState(item, btn) {
+  if (btn.classList.contains("experiense__btn-active")) {
+    item.classList.add("expiriense__wrapper-item-active");
+    item.classList.remove("expiriense__wrapper-item");
+  } else {
+    item.classList.add("expiriense__wrapper-item");
+    item.classList.remove("expiriense__wrapper-item-active");
+  }
+}
+
+function setInStorage(key, value) {
+  localStorage.setItem("editable-content-" + key, value.innerHTML);
 }
 // сделать кнопки на блоки которые нужно редактировать, сделать форму для добавления карточек + удаления карточек
 
