@@ -92,9 +92,7 @@ exprienseCards.forEach((item, index) => {
   if (savedContent) {
     item.innerHTML = savedContent;
   }
-
   const btn = item.querySelector(".experiense__btn");
-  console.log("btn :", btn);
   btn.addEventListener("click", () => {
     btn.classList.toggle("experiense__btn-active");
     toggleActiveStateExpiriense(item, btn);
