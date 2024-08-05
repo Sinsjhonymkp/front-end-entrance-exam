@@ -38,10 +38,9 @@
   padding: 11px 27px;
   border-radius: 12px;
   transition: 0.3s;
-
-  .text_small_gray {
-    color: white;
-  }
+}
+.expiriense__wrapper-item-active .text_small_gray {
+  color: white;
 }
 .text_normal {
   font-family: Poppins;
@@ -70,7 +69,10 @@
   letter-spacing: 0%;
   transition: 0.3s;
 }
-
+.text-green {
+  color: #149063;
+  padding-bottom: 11px;
+}
 .header {
   position: relative;
   display: grid;
@@ -183,11 +185,10 @@
 
 .progress-bar:hover {
   background: #cfcfcf;
-  .progress-fill {
-    background: #22b463;
-  }
 }
-
+.progress-bar:hover .progress-fill {
+  background: #22b463;
+}
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -448,6 +449,9 @@ a:after {
   color: white;
   background: var(--bg-hover-color);
 }
+.main__education-wrapper__item-active .text-green {
+  color: white;
+}
 
 .favorite__education-button {
   opacity: 0;
@@ -487,6 +491,9 @@ a:after {
   opacity: 1;
   fill: yellow;
 }
+.main__education-wrapper__item:hover .text-green {
+  color: white;
+}
 
 .main__education-wrapper__item-year {
   padding-bottom: 11px;
@@ -495,13 +502,12 @@ a:after {
 .main__education-wrapper__item-school {
   display: flex;
   flex-direction: column;
-  gap: 11px;
 }
 
 .main__about {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  justify-content: space-between;
 }
 .main__about-interests {
   position: relative;
